@@ -11,6 +11,13 @@
 |
 */
 
+use Illuminate\Routing\RouteGroup;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'admin'], function()
+{
+    Route::get('game/create', 'Admin\GameController@add');
 });
