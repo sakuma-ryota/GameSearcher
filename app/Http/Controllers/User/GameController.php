@@ -1,17 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class GameController extends Controller
 {
-    public function add()
-    {
-        return view('admin.game.create');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +14,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        return view('admin.game.index');
+        return view('user.game.index');
     }
 
     /**
@@ -29,7 +24,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -87,6 +82,4 @@ class GameController extends Controller
     {
         //
     }
-
-    
 }
