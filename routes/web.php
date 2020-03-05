@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Routing\RouteGroup;
+
 Route::get('/', function () {
     return view('welcome');
 });
