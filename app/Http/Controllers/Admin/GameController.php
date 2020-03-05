@@ -19,7 +19,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.game.index');
     }
 
     /**
