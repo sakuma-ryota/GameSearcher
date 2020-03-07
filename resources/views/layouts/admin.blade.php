@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,19 +10,20 @@
     <title>@yield('title')</title>
 
     <!-- Laravelのjavascripiptの読み込み -->
-    <script src="{{ secure_asset('js/app.js')}}" defer></script>
+    <script src="{{ asset('js/app.js')}}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- laravelのCSSの読み込み -->
-    <link href="{{ secure_asset('css/app.css') }}" rel ="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- 自作のCSSの読み込み -->
-    <link href="{{ secure_asset('css/admin.css')}}" rel ="stylesheet">
+    <link href="{{ asset('css/admin.css')}}" rel="stylesheet">
 
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
@@ -38,12 +40,12 @@
                     <ul class="navbar-nav ml-auto">
                     </ul>
                 </div>
-            </div>    
+            </div>
         </nav>
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <h1>GameSearcher</h1>
+                <div class="col-md-10 mx-auto">
+                    <h1 class="col-md-8 mx-auto text-center">GameSearcher</h1>
                 </div>
             </div>
         </div>
@@ -52,4 +54,3 @@
         </main>
     </div>
 </body>
-</html>
