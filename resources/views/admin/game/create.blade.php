@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.admin')
 
-    <title>アプリの登録</title>
-</head>
-<body>
-    <h1>アプリ登録</h1>
-</body>
-</html>
+@section('title', 'アプリ登録')
+
+@section('content')
+    <div class="containar">
+        <div class="row">
+            <div class="col-md-8 mytest">アプリ登録する</div>
+        </div>
+    </div>
+@endsection
