@@ -17,10 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function()
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
 {
     Route::get('game/create', 'Admin\GameController@add');
     Route::get('game', 'Admin\GameController@index');
 });
 
 Route::get('user', 'User\GameController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
