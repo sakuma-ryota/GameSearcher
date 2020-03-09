@@ -59,7 +59,7 @@
                 </div>
                 {{ csrf_field() }}
                 <div class="form-group row">
-                    <input type="submit" class="btn btn-primary" value="登録">
+                    <input type="submit" class="btn btn-info" value="登録">
                 </div>
             </form>
         </div>
