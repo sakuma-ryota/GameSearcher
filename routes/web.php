@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
 {
     Route::get('game/create', 'Admin\GameController@add');
+    Route::post('game/create', 'Admin\GameController@create');
     Route::get('game', 'Admin\GameController@index');
 });
 

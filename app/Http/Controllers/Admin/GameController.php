@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Game;
+use Illuminate\Foundation\Http\Middleware\ValidatePostSize;
+use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
@@ -27,9 +30,41 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        // Validationを行う
+        $this->validate($request, Game::$rules);
+        $game = new Game;
+        $form =$request->all();
+
+        if (isset($form['image'])) {
+            $path = $request->file('image')->store('public/image');
+            $game->image_path = basename($path);
+        } else {
+            $game->image_path = null; 
+        }
+
+        unset($form['_token']);
+        unset($form['image']);
         
+        
+        // if (is_null($request['appurl']) || is_null($request['googleurl'])) {
+        //     // 電話番号が空の場合、電話番号のバリデーションをクリアし、メアドのバリデーションを追加する。
+        //     if (is_null($request['appurl'])) {
+        //         $rules['googleurl'] = 'required_without:appurl|sometimes|max:255|googleurl';
+        //         $rules['appurl'] = '';
+        //     }
+        //     // メアドが空の場合、メアドのバリデーションをクリアし、電話番号のバリデーションを追加する。
+        //     if (is_null($request['appurl'])) {
+        //         $rules['appurl'] = 'required_without:googleurl|sometimes|numeric|max:14';
+        //         $rules['googleurl'] = '';
+        //     }
+        // }
+
+        $game->fill($form);
+        $game->save();
+
+        return redirect('admin/game');
     }
 
     /**
