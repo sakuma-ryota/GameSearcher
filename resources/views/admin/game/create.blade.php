@@ -37,11 +37,11 @@
                     <label class="col-md-3">ジャンル</label>
                     <div class="col-md-5">
                         <select class="form-control" name="genre" value="{{ old('genre') }}">
-                            <option value="1">RPG</option>
-                            <option value="2">アクション</option>
-                            <option value="3">シミュレーション</option>
-                            <option value="4">カードゲーム</option>
-                            <option value="5">パズル</option>
+                            <option value="RPG">RPG</option>
+                            <option value="アクション">アクション</option>
+                            <option value="シミュレーション">シミュレーション</option>
+                            <option value="カード">カード</option>
+                            <option value="パズル">パズル</option>
                         </select>
                     </div>
                 </div>

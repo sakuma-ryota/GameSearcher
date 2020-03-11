@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="login-box card">
-                    <div class="login-body card-body">
+                <div class="login-box">
+                    <div class="login-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
