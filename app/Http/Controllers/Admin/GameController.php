@@ -22,13 +22,13 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        $cond_title = $request->cond_title;
-        if ($cond_title != '') {
-            $posts = Game::where('title', $cond_title)->get();
+        $cond_genre = $request->cond_genre;
+        if ($cond_genre != '') {
+            $posts = Game::where('genre', $cond_genre)->get();
         } else {
             $posts = Game::all();
         }
-        return view('admin.game.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        return view('admin.game.index', ['posts' => $posts, 'cond_genre' => $cond_genre]);
     }
 
 
