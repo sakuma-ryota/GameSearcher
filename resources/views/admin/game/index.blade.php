@@ -12,10 +12,10 @@
                 <div class="col-md-5">
                     <a href="{{ action('Admin\GameController@add') }}" class="btn btn-info">新規登録</a>
                 </div>
-                <div class="col-md-7">
-                    <form action="{{ action('Admin\GameController@index') }}" method="get" float-right>
+                <div class="col-md-7 pull-right">
+                    <form action="{{ action('Admin\GameController@index') }}" method="get">
                         <div class="form-group row">
-                            <div class="col-md-2 d-flex align-items-center text-align-right">ジャンル</div>
+                            <div class="col-md-2 d-flex align-items-center">ジャンル</div>
                             <div class="col-md-6">
                                 <select class="form-control" name="cond_genre" value="{{ old('cond_genre') }}">
                                     <option></option>
