@@ -20,10 +20,17 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.game.index');
+        $cond_genre = $request->cond_genre;
+        if ($cond_genre != '') {
+            $posts = Game::where('genre', $cond_genre)->get();
+        } else {
+            $posts = Game::all();
+        }
+        return view('admin.game.index', ['posts' => $posts, 'cond_genre' => $cond_genre]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -47,20 +54,6 @@ class GameController extends Controller
         unset($form['_token']);
         unset($form['image']);
         
-        
-        // if (is_null($request['appurl']) || is_null($request['googleurl'])) {
-        //     // 電話番号が空の場合、電話番号のバリデーションをクリアし、メアドのバリデーションを追加する。
-        //     if (is_null($request['appurl'])) {
-        //         $rules['googleurl'] = 'required_without:appurl|sometimes|max:255|googleurl';
-        //         $rules['appurl'] = '';
-        //     }
-        //     // メアドが空の場合、メアドのバリデーションをクリアし、電話番号のバリデーションを追加する。
-        //     if (is_null($request['appurl'])) {
-        //         $rules['appurl'] = 'required_without:googleurl|sometimes|numeric|max:14';
-        //         $rules['googleurl'] = '';
-        //     }
-        // }
-
         $game->fill($form);
         $game->save();
 
