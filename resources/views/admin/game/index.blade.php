@@ -40,8 +40,8 @@
                         <thead>
                             <tr>
                                 <th width="5%">ID</th>
-                                <th width="20%">画像を表示させたい</th>
-                                <th width="20%">タイトルを入力どおり表示させたい</th>
+                                <th width="20%">アイコン</th>
+                                <th width="20%">タイトル</th>
                                 <th width="20%">リリース日</th>
                                 <th width="25%">ジャンル</th>
                                 <th width="10%">操作</th>
@@ -52,7 +52,7 @@
                                 <tr>
                                     <th>{{ $game->id }}</th>
                                     <td>
-                                        <img src="{{ asset('storage/image/app/public' . $game->image_path) }}">
+                                        <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image">
                                     </td>
                                     <td>{!! nl2br(e($game->title)) !!}</td>
                                     <td>{{ $game->relrece }}</td>
