@@ -134,7 +134,7 @@ class GameController extends Controller
         unset($game_form['_token']);
         unset($game_form['image']);
         unset($game_form['remove']);
-        // $flight->fill($request->all())->save();
+
         $game->fill($game_form)->save();
 
         $history = new History;

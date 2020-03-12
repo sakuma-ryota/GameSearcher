@@ -58,6 +58,7 @@
                     </div>
                 </div>
                 {{ csrf_field() }}
+                <input type="hidden" value="{{ $game_form->id }}" name="id">
                 <div class="form-group row">
                     <input type="submit" class="btn btn-info" value="編集">
                 </div>
