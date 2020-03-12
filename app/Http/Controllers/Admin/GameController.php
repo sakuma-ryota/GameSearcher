@@ -22,13 +22,13 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        $cond_genre = $request->cond_genre;
-        if ($cond_genre != '') {
-            $posts = Game::where('genre', $cond_genre)->get();
+        $cond_title = $request->cond_title;
+        if ($cond_title != '') {
+            $posts = Game::where('title', $cond_title)->get();
         } else {
             $posts = Game::all();
         }
-        return view('admin.game.index', ['posts' => $posts, 'cond_genre' => $cond_genre]);
+        return view('admin.game.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
 
@@ -47,23 +47,13 @@ class GameController extends Controller
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
             $game->image_path = basename($path);
-          } else {
-            $game->image_path = null;
-          }
-
-        // $game_params = [
-        //     'relrece' => $form->relrece,
-        //     'title' => $form->title,
-        //     'genre' => $form->genre,
-        //     'applink' => $form->applink,
-        //     'googlelink' => $form->googlelink
-        // ];
-
-        // $game->fill($game_params);
+        } else {
+            $game->image_path = null; 
+        }
 
         unset($form['_token']);
         unset($form['image']);
-
+        
         $game->fill($form);
         $game->save();
 
@@ -98,13 +88,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit($id)
     {
-        $game = Game::find($request->id);
-        if (empty($game)) {
-            abort(404);
-        }
-        return view('admin.game.edit', ['game_form' => $game]);
+        //
     }
 
     /**
@@ -129,12 +115,6 @@ class GameController extends Controller
     {
         //
     }
-    
-    public function delete(Request $request) {
-        $game = Game::find($request->id);
-        $game->delete();
-        return redirect('admin/game');
-    }
+
     
 }
-

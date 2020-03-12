@@ -4,27 +4,22 @@
 
 @section('content')
     <div class="container">
-        <div class="col-md-12 mx-auto">
+        <div class="col-md-4">
             <div class="row">
                 <h2>登録アプリ一覧</h2>
             </div>
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <a href="{{ action('Admin\GameController@add') }}" class="btn btn-info">新規登録</a>
                 </div>
-                <div class="col-md-7">
-                    <form action="{{ action('Admin\GameController@index') }}" method="get" float-right>
+                <div class="col-md-8">
+                    <form action="{{ ation('Admin\GameController@index') }}" method="get">
                         <div class="form-group row">
-                            <div class="col-md-2 d-flex align-items-center text-align-right">ジャンル</div>
-                            <div class="col-md-6">
-                                <select class="form-control" name="cond_genre" value="{{ old('cond_genre') }}">
-                                    <option></option>
-                                    <option value="RPG">RPG</option>
-                                    <option value="アクション">アクション</option>
-                                    <option value="シミュレーション">シミュレーション</option>
-                                    <option value="カード">カード</option>
-                                    <option value="パズル">パズル</option>
-                                </select>
+
+                            <!-- とりあえずタイトル 含む検索 -->
+                            <label class="col-md-4">タイトル</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                             </div>
                             <div class="col-md-2">
                                 {{ csrf_field() }}
@@ -36,24 +31,22 @@
             </div>
             <div class="row">
                 <div class="admin-game col-md-12 mx-auto">
-                    <table class="table table-bordered">
+                    <div class="table table-bordered">
                         <thead>
                             <tr>
-                                <th width="5%">ID</th>
+                                <th width="10%">ID</th>
                                 <th width="20%">画像を表示させたい</th>
                                 <th width="20%">タイトルを入力どおり表示させたい</th>
-                                <th width="20%">リリース日</th>
-                                <th width="25%">ジャンル</th>
-                                <th width="10%">操作</th>
+                                <th width="20%">年改行 月日で表示させたい</th>
+                                <th width="15%">ジャンル</th>
+                                <th width="15%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $game)
                                 <tr>
                                     <th>{{ $game->id }}</th>
-                                    <td>
-                                        <img src="{{ asset('storage/app/public/image' . $game->image_path) }}">
-                                    </td>
+                                    <td>{{ $game->image }}</td>
                                     <td>{{ $game->title }}</td>
                                     <td>{{ $game->relrece }}</td>
                                     <td>{{ $game->genre }}</td>
@@ -68,7 +61,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                    </table>
+                    </div>
                 </div>
             </div>
         </div>
