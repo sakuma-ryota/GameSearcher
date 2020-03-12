@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Game;
+use App\History;
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\Middleware\ValidatePostSize;
 use Illuminate\Support\Facades\Storage;
 
@@ -45,7 +47,7 @@ class GameController extends Controller
         $form =$request->all();
 
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/image');
+            $path = $request->file('image')->store('public/image/');
             $game->image_path = basename($path);
         } else {
             $game->image_path = null; 
@@ -53,6 +55,16 @@ class GameController extends Controller
 
         unset($form['_token']);
         unset($form['image']);
+
+        // $game_params = [
+        //     'relrece' => $form->relrece,
+        //     'title' => $form->title,
+        //     'genre' => $form->genre,
+        //     'applink' => $form->applink,
+        //     'googlelink' => $form->googlelink
+        // ];
+
+        // $game->fill($game_params);
         
         $game->fill($form);
         $game->save();
@@ -88,9 +100,13 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $game = Game::find($request->id);
+        if (empty($game)) {
+            abort(404);
+        }
+        return view('admin.game.edit', ['game_form' => $game]);
     }
 
     /**
@@ -100,9 +116,40 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request, Game::$rules);
+        $game = Game::find($request->id);
+        $game_form = $request->all();
+
+        if ($request->remove == 'true') {
+            $game_form['image_path'] = null;
+        } elseif ($request->file('image')) {
+            $path = $request->file('image')->store('public/image');
+            $game_form['image_path'] = basename($path);
+        } else {
+            $game_form['image_path'] = $game->image_path;
+        }
+
+        unset($game_form['_token']);
+        unset($game_form['image']);
+        unset($game_form['remove']);
+        // $flight->fill($request->all())->save();
+        $game->fill($game_form)->save();
+
+        $history = new History;
+        $history->game_id = $game->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
+
+        return redirect('admin/game');
+    }
+
+    public function delete(Request $request) {
+        $game = Game::find($request->id);
+        $game->delete();
+
+        return redirect('admin/game');
     }
 
     /**

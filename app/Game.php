@@ -16,4 +16,9 @@ class Game extends Model
         'applink' => 'required',
         'googlelink' => 'required'
     );
+
+    public function histories()
+    {
+        return $this->hasMany('App\History');
+    }
 }
