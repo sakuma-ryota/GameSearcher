@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Game;
+
 
 class GameController extends Controller
 {
@@ -12,9 +14,10 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('user.game.index');
+        $posts = Game::all()->sortByDesc('relrece');
+        return view('user.game.index', ['posts' => $posts]);
     }
 
     /**

@@ -3,15 +3,15 @@ body {
     background-color: silver;
   }
 
-  h1 {
-    font-size: 55px;
-  }
-
   .table>tbody>tr>td, .table>tbody>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     vertical-align: middle;
     text-align: center;
   }
 
   .icon-image {
-    width: 100px;
+    display: block;
+    height: auto;
+    max-height: 100px;
+    max-width: 100%;
+    margin: auto;
   }
