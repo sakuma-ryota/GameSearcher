@@ -18,9 +18,6 @@
     <!-- トップに戻るボタンのプラグイン
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"> -->
 
-    <!-- デートピッカー用プラグインの読み込み -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.4.3/flatpickr.min.js"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -45,7 +42,6 @@
         <main class="py-4">
             @yield('content')
             <!-- <div id="page_top"><a href="#"></a></div> -->
-            <!-- <div class="col-10">デットピッカープラグイン</div> -->
         </main>
     </div>
 </body>

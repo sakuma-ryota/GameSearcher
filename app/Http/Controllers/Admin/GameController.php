@@ -44,7 +44,7 @@ class GameController extends Controller
         // Validationを行う
         $this->validate($request, Game::$rules);
         $game = new Game;
-        $form =$request->all();
+        $form = $request->all();
 
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image/');
@@ -52,20 +52,24 @@ class GameController extends Controller
         } else {
             $game->image_path = null; 
         }
-
+        // $form += array('search-releace' => $form['releace']);
+        // $form['search-releace'] = substr($form['releace'], 5);
+        $search = substr($form['releace'], 5);
         $game_params = [
-            'releace' => $form->releace,
-            'search-relce' => $form->search-releace,
-            'title' => $form->title,
-            'genre' => $form->genre,
-            'applink' => $form->applink,
-            'googlelink' => $form->googlelink,          
+            'releace' => $form['releace'],
+            'search-releace' => $search,
+            'title' => $form['title'],
+            'genre' => $form['genre'],
+            'applink' => $form['applink'],
+            'googlelink' => $form['googlelink'],          
         ];
         
-        $form += array('search-releace' => $form['releace']);
-        $form['search-releace'] = substr($form['releace'], 5, 6);
+       
 
+        // unset($form['_token']);
+        // unset($form['image']);
 
+        // $game->fill($form);
         $game->fill($game_params);
         $game->save();
 
