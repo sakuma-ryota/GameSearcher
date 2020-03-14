@@ -41,7 +41,6 @@
         </div>
         <main class="py-4">
             @yield('content')
-            <!-- <div id="page_top"><a href="#"></a></div> -->
         </main>
     </div>
 </body>

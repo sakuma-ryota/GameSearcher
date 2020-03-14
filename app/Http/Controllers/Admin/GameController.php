@@ -52,8 +52,7 @@ class GameController extends Controller
         } else {
             $game->image_path = null; 
         }
-        // $form += array('search-releace' => $form['releace']);
-        // $form['search-releace'] = substr($form['releace'], 5);
+
         $search = substr($form['releace'], 5);
         $game_params = [
             'releace' => $form['releace'],
@@ -61,15 +60,9 @@ class GameController extends Controller
             'title' => $form['title'],
             'genre' => $form['genre'],
             'applink' => $form['applink'],
-            'googlelink' => $form['googlelink'],          
+            'googlelink' => $form['googlelink'],
         ];
-        
-       
 
-        // unset($form['_token']);
-        // unset($form['image']);
-
-        // $game->fill($form);
         $game->fill($game_params);
         $game->save();
 
@@ -135,11 +128,17 @@ class GameController extends Controller
             $game_form['image_path'] = $game->image_path;
         }
 
-        unset($game_form['_token']);
-        unset($game_form['image']);
-        unset($game_form['remove']);
-
-        $game->fill($game_form)->save();
+        $search = substr($game_form['releace'], 5);
+        $game_form_params = [
+            'releace' => $game_form['releace'],
+            'search-releace' => $search,
+            'title' => $game_form['title'],
+            'genre' => $game_form['genre'],
+            'applink' => $game_form['applink'],
+            'googlelink' => $game_form['googlelink'],
+        ];
+        
+        $game->fill($game_form_params)->save();
 
         $history = new History;
         $history->game_id = $game->id;
