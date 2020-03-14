@@ -16,7 +16,8 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Game::all()->sortByDesc('relrece');
+        $posts = Game::all()->sortBy('search-releace');
+
         return view('user.game.index', ['posts' => $posts]);
     }
 

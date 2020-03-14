@@ -13,10 +13,13 @@
     <script src="{{ asset('js/app.js')}}" defer></script>
 
     <!-- 自作のJavaScriptの読み込み -->
-    <script type="text/javascript" src="js/user.js"></script>
+    <script type="text/javascript" src="js/user.js" defer></script>
 
-    <!-- トップに戻るボタンのプラグイン -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- トップに戻るボタンのプラグイン
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"> -->
+
+    <!-- デートピッカー用プラグインの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.4.3/flatpickr.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -41,6 +44,8 @@
         </div>
         <main class="py-4">
             @yield('content')
+            <!-- <div id="page_top"><a href="#"></a></div> -->
+            <!-- <div class="col-10">デットピッカープラグイン</div> -->
         </main>
     </div>
 </body>

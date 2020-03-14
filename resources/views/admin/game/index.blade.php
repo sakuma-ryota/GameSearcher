@@ -55,7 +55,7 @@
                                         <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image">
                                     </td>
                                     <td>{!! nl2br(e($game->title)) !!}</td>
-                                    <td>{{ $game->relrece }}</td>
+                                    <td>{{ $game->releace }}</td>
                                     <td>{{ $game->genre }}</td>
                                     <td>
                                         <div>

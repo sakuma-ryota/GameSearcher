@@ -53,20 +53,20 @@ class GameController extends Controller
             $game->image_path = null; 
         }
 
-        unset($form['_token']);
-        unset($form['image']);
-
-        // $game_params = [
-        //     'relrece' => $form->relrece,
-        //     'title' => $form->title,
-        //     'genre' => $form->genre,
-        //     'applink' => $form->applink,
-        //     'googlelink' => $form->googlelink
-        // ];
-
-        // $game->fill($game_params);
+        $game_params = [
+            'releace' => $form->releace,
+            'search-relce' => $form->search-releace,
+            'title' => $form->title,
+            'genre' => $form->genre,
+            'applink' => $form->applink,
+            'googlelink' => $form->googlelink,          
+        ];
         
-        $game->fill($form);
+        $form += array('search-releace' => $form['releace']);
+        $form['search-releace'] = substr($form['releace'], 5, 6);
+
+
+        $game->fill($game_params);
         $game->save();
 
         return redirect('admin/game');

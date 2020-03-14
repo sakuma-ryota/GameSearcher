@@ -28,9 +28,9 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-md-3" for="relrece">リリース日</label>
+                    <label class="col-md-3" for="releace">リリース日</label>
                     <div class="col-md-5">
-                    <input id="birthdate" type="text" class="form-control datepicker" name="relrece" value="{{ $game_form->relrece }}">
+                    <input id="birthdate" type="text" class="form-control datepicker" name="releace" value="{{ $game_form->releace }}">
                     </div>
                 </div>
                 <div class="form-group row">

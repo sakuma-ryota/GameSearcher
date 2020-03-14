@@ -33,11 +33,11 @@
                     <div class="col-md-6 col-sm-10 mx-auto mb-4 text-center">
                         <div class="main">
                             <div class="icon-day row">
-                                <div class="image col-6">
+                                <div class="image col-6 ">
                                     <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image">
                                 </div>
-                                <div class="relrece col-6 m-auto">
-                                    {{ $game->relrece }}
+                                <div class="releace col-6 m-auto text-left">
+                                    {{ $game->releace }}
                                 </div>
                             </div>
                             <div class="title">{!! nl2br(e($game->title)) !!}</div>
@@ -54,5 +54,4 @@
             </div>
         </div>
     </div>
-    <div id="page_top"><a href="#"></a></div>
 @endsection

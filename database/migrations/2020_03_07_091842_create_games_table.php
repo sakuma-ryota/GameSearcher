@@ -17,7 +17,8 @@ class CreateGamesTable extends Migration
             $table->bigIncrements('id');
             $table->string('image_path');
             $table->string('title');
-            $table->string('relrece');
+            $table->string('releace');
+            $table->string('search-releace');
             $table->string('genre');
             $table->string('applink');
             $table->string('googlelink');

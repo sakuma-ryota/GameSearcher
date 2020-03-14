@@ -10,7 +10,7 @@ class Game extends Model
 
     public static $rules = array(
         'image' => 'required',
-        'relrece' => 'required',
+        'releace' => 'required',
         'title' => 'required',
         'genre' => 'required',
         'applink' => 'required',

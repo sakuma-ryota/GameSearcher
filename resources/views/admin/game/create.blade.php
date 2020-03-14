@@ -30,7 +30,7 @@
                 <div class="form-group row">
                     <label class="col-md-3">リリース日</label>
                     <div class="col-md-5">
-                    <input id="birthdate" type="text" class="form-control datepicker" name="relrece" value="{{ old('relrece') }}">
+                    <input id="birthdate" type="text" class="form-control datepicker" name="releace" value="{{ old('releace') }}">
                     </div>
                 </div>
                 <div class="form-group row">
