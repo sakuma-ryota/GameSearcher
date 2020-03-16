@@ -22,7 +22,7 @@
                                     <option value="RPG">RPG</option>
                                     <option value="アクション">アクション</option>
                                     <option value="シミュレーション">シミュレーション</option>
-                                    <option value="カード">カード</option>
+                                    <option value="カードゲーム">カードゲーム</option>
                                     <option value="パズル">パズル</option>
                                 </select>
                             </div>
@@ -52,7 +52,9 @@
                                 <tr>
                                     <th>{{ $game->id }}</th>
                                     <td>
-                                        <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image">
+                                        @if ($game->image_path)
+                                            <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image">
+                                        @endif
                                     </td>
                                     <td>{!! nl2br(e($game->title)) !!}</td>
                                     <td>{{ $game->releace }}</td>

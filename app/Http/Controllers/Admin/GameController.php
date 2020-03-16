@@ -43,6 +43,21 @@ class GameController extends Controller
     {
         // Validationを行う
         $this->validate($request, Game::$rules);
+        // if ($request['applink'] == '' || $request['googlelink'] == '') {
+        //     // アップがからのときアップのバリデーションクリアし、グーグルにバリデーションする
+        //     if ($request['applink'] == '') {
+        //         $rules['applink'] = '';
+        //         $rules['googlelink'] = 'required';
+                
+        //     } 
+        //     // グーグルが、からのときグーグルのバリデーションクリアし、アップにバリデーションする
+        //     if ($request['googlelink'] == '') {
+        //         $rules['applink'] = 'required';
+        //         $rules['googlelink'] = '';
+        //     }
+        // }
+        // // $game = Validator::make($request->all(), $rules);
+
         $game = new Game;
         $form = $request->all();
 
@@ -116,12 +131,12 @@ class GameController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, Game::$rules);
+
         $game = Game::find($request->id);
+        
         $game_form = $request->all();
 
-        if ($request->remove == 'true') {
-            $game_form['image_path'] = null;
-        } elseif ($request->file('image')) {
+        if ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
             $game_form['image_path'] = basename($path);
         } else {
@@ -136,6 +151,7 @@ class GameController extends Controller
             'genre' => $game_form['genre'],
             'applink' => $game_form['applink'],
             'googlelink' => $game_form['googlelink'],
+            'image_path' => $game_form['image_path'] 
         ];
         
         $game->fill($game_form_params)->save();

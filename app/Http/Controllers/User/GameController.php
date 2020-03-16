@@ -16,9 +16,14 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Game::all()->sortBy('search-releace');
+        $cond_genre = $request->cond_genre;
+        if ($cond_genre != '') {
+            $posts = Game::where('genre', $cond_genre)->get()->sortBy('search-releace');
+        } else {
+            $posts = Game::all()->sortBy('search-releace');
+        }
 
-        return view('user.game.index', ['posts' => $posts]);
+        return view('user.game.index', ['posts' => $posts, 'cond_genre' => $cond_genre]);
     }
 
     /**

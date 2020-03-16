@@ -24,24 +24,24 @@
                 <div class="form-group row">
                     <label class="col-md-3" for="title">タイトル</label>
                     <div class="col-md-5">
-                        <textarea rows="3" class="form-control" name="title">{{ $game_form->title }}</textarea>
+                        <textarea class="form-control" name="title">{{ $game_form->title }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-3" for="releace">リリース日</label>
                     <div class="col-md-5">
-                    <input id="birthdate" type="text" class="form-control datepicker" name="releace" value="{{ $game_form->releace }}">
+                    <input id="releace" type="text" class="form-control datepicker" name="releace" value="{{ $game_form->releace }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-3" for="genre">ジャンル</label>
                     <div class="col-md-5">
-                        <select class="form-control" name="genre" value="{{ $game_form->genre }}">
-                            <option value="RPG">RPG</option>
-                            <option value="アクション">アクション</option>
-                            <option value="シミュレーション">シミュレーション</option>
-                            <option value="カードゲーム">カードゲーム</option>
-                            <option value="パズル">パズル</option>
+                        <select class="form-control" name="genre">
+                            <option value="RPG" @if ($game_form->genre=='RPG') selected @endif>RPG</option>
+                            <option value="アクション" @if ($game_form->genre=='アクション') selected @endif>アクション</option>
+                            <option value="シュミレーション" @if ($game_form->genre=='シュミレーション') selected @endif>シミュレーション</option>
+                            <option value="カードゲーム" @if ($game_form->genre=='カードゲーム') selected @endif>カードゲーム</option>
+                            <option value="パズル" @if ($game_form->genre=='パズル') selected @endif>パズル</option>
                         </select>
                     </div>
                 </div>

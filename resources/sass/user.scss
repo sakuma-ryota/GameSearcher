@@ -6,12 +6,10 @@ body {
 .icon-image {
     display: block;
     height: auto;
-    max-height: 175px;
+    max-height: 100%;
     max-width: 100%;
-    margin: 10px;
+    margin-top: 15px;
 }
-
-
 
 .main {
     background-color: white;
@@ -33,37 +31,3 @@ body {
     max-width: 100%;
     padding: 10px;
 }
-
-// #page_top{
-//     width: 50px;
-//     height: 50px;
-//     position: fixed;　//要素の位置を固定する
-//     right: 0;
-//     bottom: 0;
-//     background: #3f98ef;
-//     opacity: 0.6;
-//     border-radius: 50%;
-//    }
-//    #page_top a{
-//     position: relative;
-//     display: block;
-//     width: 50px;
-//     height: 50px;
-//     text-decoration: none;
-//    }
-//    #page_top a::before{ //疑似要素::before要素に装飾的な内容を追加するために用いる
-//     font-family: 'Font Awesome 5 Free';　//fontawsomeの分類
-//     font-weight: 900;
-//     content: '\f102';　//fontawesomeの種類、疑似要素内で使用
-//     font-size: 25px;
-//     color: #fff;
-//     position: absolute;
-//     width: 25px;
-//     height: 25px;
-//     top: -5px;
-//     bottom: 0;
-//     right: 0;
-//     left: 0;
-//     margin: auto;
-//     text-align: center;
-//    }

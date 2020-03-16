@@ -15,8 +15,15 @@
     <!-- 自作のJavaScriptの読み込み -->
     <script type="text/javascript" src="js/user.js" defer></script>
 
-    <!-- トップに戻るボタンのプラグイン
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"> -->
+    <!-- トップに戻る -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+
+    <!-- 同一ページジャンプ -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -37,6 +44,9 @@
                 <div class="col-12 mx-auto mt-5 text-center">
                     <h1>GameSearcher</h1>
                 </div>
+            </div>
+            <div class="row">
+
             </div>
         </div>
         <main class="py-4">
