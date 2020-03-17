@@ -28,7 +28,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
     
 });
 
-Route::get('user', 'User\GameController@index');
+Route::get('', 'User\GameController@index');
 
 Auth::routes();
 

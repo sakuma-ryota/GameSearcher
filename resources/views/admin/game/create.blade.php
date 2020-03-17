@@ -24,13 +24,13 @@
                 <div class="form-group row">
                     <label class="col-md-3">タイトル</label>
                     <div class="col-md-5">
-                        <textarea rows="3" class="form-control" name="title">{{ old('title') }}</textarea>
+                        <textarea rows="2" class="form-control" name="title">{{ old('title') }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-md-3">リリース日</label>
+                    <label class="col-md-">リリース日</label>
                     <div class="col-md-5">
-                    <input id="birthdate" type="text" class="form-control datepicker" name="relrece" value="{{ old('relrece') }}">
+                    <input id="birthdate" type="text" class="form-control datepicker" name="releace" value="{{ old('releace') }}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -43,6 +43,12 @@
                             <option value="カードゲーム">カードゲーム</option>
                             <option value="パズル">パズル</option>
                         </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">公式HP</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="link" value="{{ old('link') }}">
                     </div>
                 </div>
                 <div class="form-group row">
