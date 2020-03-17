@@ -68,12 +68,15 @@ class GameController extends Controller
             $game->image_path = null; 
         }
 
-        $search = substr($form['releace'], 5);
+        $releace_m_d = substr($form['releace'], 5);
+        $releace_m = substr($releace_m_d, 0, strlen($releace_m_d) - 3);
         $game_params = [
             'releace' => $form['releace'],
-            'search-releace' => $search,
+            'releace_m_d' => $releace_m_d,
+            'releace_m' => $releace_m,
             'title' => $form['title'],
             'genre' => $form['genre'],
+            'link' => $form['link'],
             'applink' => $form['applink'],
             'googlelink' => $form['googlelink'],
         ];
@@ -143,15 +146,18 @@ class GameController extends Controller
             $game_form['image_path'] = $game->image_path;
         }
 
-        $search = substr($game_form['releace'], 5);
+        $releace_m_d = substr($game_form['releace'], 5);
+        $releace_m = substr($releace_m_d, 0, strlen($releace_m_d) - 3);;
         $game_form_params = [
             'releace' => $game_form['releace'],
-            'search-releace' => $search,
+            'releace_m_d' => $releace_m_d,
+            'releace_m' => $releace_m,
             'title' => $game_form['title'],
             'genre' => $game_form['genre'],
             'applink' => $game_form['applink'],
+            'link' => $game_form['link'],
             'googlelink' => $game_form['googlelink'],
-            'image_path' => $game_form['image_path'] 
+            'image_path' => $game_form['image_path']
         ];
         
         $game->fill($game_form_params)->save();

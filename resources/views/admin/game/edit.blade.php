@@ -46,6 +46,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-md-3">公式HP</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="link" value="{{ $game_form->link }}">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-md-3" for="applink">App Store</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="applink" value="{{ $game_form->applink }}">
@@ -73,7 +79,7 @@
                             @endforeach
                         @endif
                     </ul>
-                </div>    
+                </div>
             </div>
         </div>
     </div>

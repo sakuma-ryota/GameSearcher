@@ -1,6 +1,7 @@
 body {
     background-position: center;
     background-color: silver;
+    font-family: sans-serif;
   }
 
   .table>tbody>tr>td, .table>tbody>tr>th, .table>thead>tr>td, .table>thead>tr>th {
@@ -12,6 +13,6 @@ body {
     display: block;
     height: auto;
     max-height: 100%;
-    max-width: 100%;
+    max-width: 100px;
     margin: auto;
   }

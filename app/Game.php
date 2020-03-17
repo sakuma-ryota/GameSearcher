@@ -13,8 +13,9 @@ class Game extends Model
         'releace' => 'required',
         'title' => 'required',
         'genre' => 'required',
-        'applink' => 'required',
-        'googlelink' => 'required'
+        'link' => 'url',
+        'applink' => 'url',
+        'googlelink' => 'url'
     );
 
     public function histories()

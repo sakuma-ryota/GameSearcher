@@ -18,8 +18,10 @@ class CreateGamesTable extends Migration
             $table->string('image_path');
             $table->string('title');
             $table->string('releace');
-            $table->string('search-releace');
+            $table->string('releace_m_d');
+            $table->string('releace_m');
             $table->string('genre');
+            $table->string(('link'));
             $table->string('applink');
             $table->string('googlelink');
             $table->timestamps();
@@ -36,3 +38,4 @@ class CreateGamesTable extends Migration
         Schema::dropIfExists('games');
     }
 }
+

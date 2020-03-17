@@ -1,6 +1,11 @@
 body {
   background-position: center;
   background-color: silver;
+  font-family: sans-serif;
+}
+
+.jampreleace {
+  font-size: 20px;
 }
 
 .icon-image {
