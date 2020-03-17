@@ -114,7 +114,7 @@ return [
     'timezone' => 'The :attribute must be a valid zone.',
     'unique' => 'The :attribute has already been taken.',
     'uploaded' => 'The :attribute failed to upload.',
-    'url' => 'The :attribute format is invalid.',
+    'url' => ':attribute はurl形式で入力して下さい。',
     'uuid' => 'The :attribute must be a valid UUID.',
 
     /*
@@ -150,6 +150,7 @@ return [
         'relrece' => 'リリース日',
         'title' => 'タイトル',
         'genre' => 'ジャンル',
+        'link' => '公式HP',
         'applink' => 'App Store',
         'googlelink' => 'Google Play'
     ],

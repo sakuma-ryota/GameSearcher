@@ -43,8 +43,23 @@ class GameController extends Controller
     {
         // Validationを行う
         $this->validate($request, Game::$rules);
+        // if ($request['applink'] == '' || $request['googlelink'] == '') {
+        //     // アップがからのときアップのバリデーションクリアし、グーグルにバリデーションする
+        //     if ($request['applink'] == '') {
+        //         $rules['applink'] = '';
+        //         $rules['googlelink'] = 'required';
+                
+        //     } 
+        //     // グーグルが、からのときグーグルのバリデーションクリアし、アップにバリデーションする
+        //     if ($request['googlelink'] == '') {
+        //         $rules['applink'] = 'required';
+        //         $rules['googlelink'] = '';
+        //     }
+        // }
+        // // $game = Validator::make($request->all(), $rules);
+
         $game = new Game;
-        $form =$request->all();
+        $form = $request->all();
 
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image/');
@@ -53,20 +68,20 @@ class GameController extends Controller
             $game->image_path = null; 
         }
 
-        unset($form['_token']);
-        unset($form['image']);
+        $releace_m_d = substr($form['releace'], 5);
+        $releace_m = substr($releace_m_d, 0, strlen($releace_m_d) - 3);
+        $game_params = [
+            'releace' => $form['releace'],
+            'releace_m_d' => $releace_m_d,
+            'releace_m' => $releace_m,
+            'title' => $form['title'],
+            'genre' => $form['genre'],
+            'link' => $form['link'],
+            'applink' => $form['applink'],
+            'googlelink' => $form['googlelink'],
+        ];
 
-        // $game_params = [
-        //     'relrece' => $form->relrece,
-        //     'title' => $form->title,
-        //     'genre' => $form->genre,
-        //     'applink' => $form->applink,
-        //     'googlelink' => $form->googlelink
-        // ];
-
-        // $game->fill($game_params);
-        
-        $game->fill($form);
+        $game->fill($game_params);
         $game->save();
 
         return redirect('admin/game');
@@ -119,23 +134,33 @@ class GameController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, Game::$rules);
+
         $game = Game::find($request->id);
+        
         $game_form = $request->all();
 
-        if ($request->remove == 'true') {
-            $game_form['image_path'] = null;
-        } elseif ($request->file('image')) {
+        if ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
             $game_form['image_path'] = basename($path);
         } else {
             $game_form['image_path'] = $game->image_path;
         }
 
-        unset($game_form['_token']);
-        unset($game_form['image']);
-        unset($game_form['remove']);
-
-        $game->fill($game_form)->save();
+        $releace_m_d = substr($game_form['releace'], 5);
+        $releace_m = substr($releace_m_d, 0, strlen($releace_m_d) - 3);;
+        $game_form_params = [
+            'releace' => $game_form['releace'],
+            'releace_m_d' => $releace_m_d,
+            'releace_m' => $releace_m,
+            'title' => $game_form['title'],
+            'genre' => $game_form['genre'],
+            'applink' => $game_form['applink'],
+            'link' => $game_form['link'],
+            'googlelink' => $game_form['googlelink'],
+            'image_path' => $game_form['image_path']
+        ];
+        
+        $game->fill($game_form_params)->save();
 
         $history = new History;
         $history->game_id = $game->id;

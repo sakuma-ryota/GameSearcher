@@ -1,0 +1,39 @@
+body {
+  background-position: center;
+  background-color: silver;
+  font-family: sans-serif;
+}
+
+.jampreleace {
+  font-size: 20px;
+}
+
+.icon-image {
+  display: block;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin-top: 15px;
+}
+
+.main {
+  background-color: white;
+  font-size: 30px;
+}
+
+.applink {
+  display: block;
+  height: auto;
+  max-height: 100px;
+  max-width: 100%;
+  padding: 10px;
+}
+
+.googlelink {
+  display: block;
+  height: auto;
+  max-height: 85px;
+  max-width: 100%;
+  padding: 10px;
+}
+

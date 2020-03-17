@@ -13,16 +13,16 @@
                     <a href="{{ action('Admin\GameController@add') }}" class="btn btn-info">新規登録</a>
                 </div>
                 <div class="col-md-7">
-                    <form action="{{ action('Admin\GameController@index') }}" method="get" float-right>
+                    <form action="{{ action('Admin\GameController@index') }}" method="get">
                         <div class="form-group row">
-                            <div class="col-md-2 d-flex align-items-center text-align-right">ジャンル</div>
-                            <div class="col-md-6">
+                            <div class="col-md-3 m-auto text-right">ジャンル</div>
+                            <div class="col-md-7">
                                 <select class="form-control" name="cond_genre" value="{{ old('cond_genre') }}">
                                     <option></option>
                                     <option value="RPG">RPG</option>
                                     <option value="アクション">アクション</option>
                                     <option value="シミュレーション">シミュレーション</option>
-                                    <option value="カード">カード</option>
+                                    <option value="カードゲーム">カードゲーム</option>
                                     <option value="パズル">パズル</option>
                                 </select>
                             </div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="admin-game col-md-12 mx-auto">
+                <div class="admin-game col-md-12">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -52,10 +52,12 @@
                                 <tr>
                                     <th>{{ $game->id }}</th>
                                     <td>
-                                        <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image">
+                                        @if ($game->image_path)
+                                            <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image">
+                                        @endif
                                     </td>
                                     <td>{!! nl2br(e($game->title)) !!}</td>
-                                    <td>{{ $game->relrece }}</td>
+                                    <td>{{ $game->releace }}</td>
                                     <td>{{ $game->genre }}</td>
                                     <td>
                                         <div>

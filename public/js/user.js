@@ -93,7 +93,27 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/ryota/Desktop/workspace/GameSearcher/resources/js/user.js'");
+=======
+// トップに戻るボタン
+function activepageTopBtn() {
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 100) {
+      $('#pageTopBtnBox').fadeIn();
+    } else {
+      $('#pageTopBtnBox').fadeOut();
+    }
+  });
+  $('#pageTopBtn').on('click', function () {
+    $('html, body').stop().animate({
+      scrollTop: $('body').offset().top
+    }, 300);
+  });
+}
+
+activepageTopBtn();
+>>>>>>> f0dbde8ef6c6c6861aac9c08ed20bb34243a8242
 
 /***/ }),
 
