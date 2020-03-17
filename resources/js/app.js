@@ -34,4 +34,4 @@ const app = new Vue({
 require('./bootstrap');   
 $(".datepicker").datepicker({                                                                                                                                                                                      
     dateFormat: 'yy-mm-dd'                                                                                                                                                                                        
-});   
+});
