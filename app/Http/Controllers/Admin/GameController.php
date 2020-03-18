@@ -181,5 +181,5 @@ class GameController extends Controller
         //
     }
 
-    
+
 }

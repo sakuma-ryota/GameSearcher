@@ -27,15 +27,15 @@ body {
   font-size: 30px;
 }
 
-.icon {
+.main-icon {
   display: block;
   height: auto;
   max-height: 100%;
-  max-width: 100px;
+  max-width: 100%;
   margin-top: 15px;
 }
 
-.icon-image {
+.index-icon {
   display: block;
   height: auto;
   max-height: 100%;

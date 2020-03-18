@@ -55,7 +55,7 @@
                     <div class="main col-md-5 col-sm-10 mx-auto mb-4 text-center" id="{{ $game->releace_m }}">
                         <div class="icon-day row">
                             <div class="image col-6 ">
-                                <a href="{{ $game->link }}"><img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image"></a>
+                                <a href="{{ $game->link }}"><img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon"></a>
                             </div>
                             <div class="releace col-6 m-auto text-left">
                                 {{ $game->releace }}

@@ -54,8 +54,8 @@
                 @foreach($posts as $game)
                     <div class="main col-md-5 col-sm-10 mx-auto mb-4 text-center" id="{{ $game->releace_m }}">
                         <div class="icon-day row">
-                            <div class="image col-6 ">
-                                <a href="{{ $game->link }}"><img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image"></a>
+                            <div class="col-6">
+                                <a href="{{ $game->link }}"><img src="{{ asset('storage/image/' . $game->image_path) }}" class="main-icon"></a>
                             </div>
                             <div class="releace col-6 m-auto text-left">
                                 {{ $game->releace }}
@@ -76,5 +76,5 @@
     </div>
     <div id="pageTopBtnBox" style="position: fixed;bottom: 100px;right: 20px; display:none">
         <button id="pageTopBtn" type="button" class="btn btn-lg btn-dark" ><span class="h1"><i class="fa fa-angle-up"></span></i></button>
-    </div>       
+    </div>
 @endsection
