@@ -25,7 +25,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
     Route::get('game/edit', 'Admin\GameController@edit');
     Route::post('game/edit', 'Admin\GameController@update');
     Route::get('game/delete', 'Admin\GameController@delete');
-    
+    Route::get('/', 'Admin\GameController@show');
 });
 
 Route::get('', 'User\GameController@index');

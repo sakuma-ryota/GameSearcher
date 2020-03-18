@@ -26,6 +26,26 @@
 
 <body>
     <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="applicationtitle navbar-brand ml-3" href="{{ url('/admin') }}">GameSearcher</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-auto" id="navbarToggler">
+                <ul class="navbar-nav mr-auto mt-auto">
+                    <li class="nav-item active"> <a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+                    <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mx-auto text-center mt-3">
+                    <h1>GameSearcher</h1>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-md navbar-dark navbar-GameSearcher">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">GameSearcher</a>
@@ -38,7 +58,6 @@
                     <ul class="navbar-nav ml-auto">
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                        {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -50,7 +69,6 @@
                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -61,13 +79,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 mx-auto">
-                    <h1 class="col-md-10 mx-auto text-center">GameSearcher</h1>
-                </div>
-            </div>
-        </div>
+
         <main class="py-4">
             @yield('content')
         </main>
