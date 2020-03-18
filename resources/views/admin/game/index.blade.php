@@ -53,7 +53,7 @@
                                     <th>{{ $game->id }}</th>
                                     <td>
                                         @if ($game->image_path)
-                                            <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon-image">
+                                            <img src="{{ asset('storage/image/' . $game->image_path) }}" class="icon">
                                         @endif
                                     </td>
                                     <td>{!! nl2br(e($game->title)) !!}</td>

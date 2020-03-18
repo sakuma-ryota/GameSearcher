@@ -43,19 +43,6 @@ class GameController extends Controller
     {
         // Validationを行う
         $this->validate($request, Game::$rules);
-        // if ($request['applink'] == '' || $request['googlelink'] == '') {
-        //     // アップがからのときアップのバリデーションクリアし、グーグルにバリデーションする
-        //     if ($request['applink'] == '') {
-        //         $rules['applink'] = '';
-        //         $rules['googlelink'] = 'required';
-        //     }
-        //     // グーグルが、からのときグーグルのバリデーションクリアし、アップにバリデーションする
-        //     if ($request['googlelink'] == '') {
-        //         $rules['applink'] = 'required';
-        //         $rules['googlelink'] = '';
-        //     }
-        // }
-        // // $game = Validator::make($request->all(), $rules);
 
         $game = new Game;
         $form = $request->all();
