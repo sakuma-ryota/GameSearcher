@@ -86,25 +86,41 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/user.js":
-/*!******************************!*\
-  !*** ./resources/js/user.js ***!
-  \******************************/
+/***/ "./resources/js/admin.js":
+/*!*******************************!*\
+  !*** ./resources/js/admin.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/ryota/Desktop/workspace/GameSearcher/resources/js/user.js'");
+// トップに戻るボタン
+function activepageTopBtn() {
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 100) {
+      $('#pageTopBtnBox').fadeIn();
+    } else {
+      $('#pageTopBtnBox').fadeOut();
+    }
+  });
+  $('#pageTopBtn').on('click', function () {
+    $('html, body').stop().animate({
+      scrollTop: $('body').offset().top
+    }, 300);
+  });
+}
+
+activepageTopBtn();
 
 /***/ }),
 
 /***/ 1:
-/*!************************************!*\
-  !*** multi ./resources/js/user.js ***!
-  \************************************/
+/*!*************************************!*\
+  !*** multi ./resources/js/admin.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ryota/Desktop/workspace/GameSearcher/resources/js/user.js */"./resources/js/user.js");
+module.exports = __webpack_require__(/*! /Users/ryota/Desktop/workspace/GameSearcher/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })

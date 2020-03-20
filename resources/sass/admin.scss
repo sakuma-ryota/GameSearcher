@@ -2,17 +2,59 @@ body {
     background-position: center;
     background-color: silver;
     font-family: sans-serif;
-  }
+}
 
-  .table>tbody>tr>td, .table>tbody>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+.applicationtitle {
+    font-size: 20px;
+}
+
+.jampreleace {
+    font-size: 20px;
+}
+
+.table>tbody>tr>td, .table>thead>tr>th {
     vertical-align: middle;
     text-align: center;
-  }
+}
 
-  .icon-image {
+.main {
+    background-color: white;
+    font-size: 30px;
+}
+
+.main-icon {
+  	display: block;
+  	height: auto;
+  	max-height: 100%;
+  	max-width: 100%;
+  	margin-top: 15px;
+}
+
+.index-icon {
     display: block;
     height: auto;
     max-height: 100%;
     max-width: 100px;
     margin: auto;
-  }
+}
+
+.applink {
+    display: block;
+    height: auto;
+    max-height: 100px;
+    max-width: 100%;
+    padding: 10px;
+}
+
+.googlelink {
+    display: block;
+    height: auto;
+    max-height: 85px;
+    max-width: 100%;
+    padding: 10px;
+}
+
+.dropMenu {
+  min-width: auto;
+}
+

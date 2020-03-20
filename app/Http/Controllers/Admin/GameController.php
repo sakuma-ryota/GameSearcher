@@ -43,20 +43,6 @@ class GameController extends Controller
     {
         // Validationを行う
         $this->validate($request, Game::$rules);
-        // if ($request['applink'] == '' || $request['googlelink'] == '') {
-        //     // アップがからのときアップのバリデーションクリアし、グーグルにバリデーションする
-        //     if ($request['applink'] == '') {
-        //         $rules['applink'] = '';
-        //         $rules['googlelink'] = 'required';
-                
-        //     } 
-        //     // グーグルが、からのときグーグルのバリデーションクリアし、アップにバリデーションする
-        //     if ($request['googlelink'] == '') {
-        //         $rules['applink'] = 'required';
-        //         $rules['googlelink'] = '';
-        //     }
-        // }
-        // // $game = Validator::make($request->all(), $rules);
 
         $game = new Game;
         $form = $request->all();
@@ -65,7 +51,7 @@ class GameController extends Controller
             $path = $request->file('image')->store('public/image/');
             $game->image_path = basename($path);
         } else {
-            $game->image_path = null; 
+            $game->image_path = null;
         }
 
         $releace_m_d = substr($form['releace'], 5);
@@ -104,9 +90,16 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $cond_genre = $request->cond_genre;
+        if ($cond_genre != '') {
+            $posts = Game::where('genre', $cond_genre)->get()->sortBy('releace_m_d');
+        } else {
+            $posts = Game::all()->sortBy('releace_m_d');
+        }
+
+        return view('admin.game.main', ['posts' => $posts, 'cond_genre' => $cond_genre]);
     }
 
     /**
@@ -136,7 +129,7 @@ class GameController extends Controller
         $this->validate($request, Game::$rules);
 
         $game = Game::find($request->id);
-        
+
         $game_form = $request->all();
 
         if ($request->file('image')) {
@@ -159,7 +152,7 @@ class GameController extends Controller
             'googlelink' => $game_form['googlelink'],
             'image_path' => $game_form['image_path']
         ];
-        
+
         $game->fill($game_form_params)->save();
 
         $history = new History;
@@ -188,5 +181,5 @@ class GameController extends Controller
         //
     }
 
-    
+
 }

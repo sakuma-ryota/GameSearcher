@@ -1,4 +1,3 @@
-
 // トップに戻るボタン
 function activepageTopBtn() {
     $(window).scroll(function () {

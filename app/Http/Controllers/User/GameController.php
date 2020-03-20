@@ -24,7 +24,7 @@ class GameController extends Controller
         }
 
         return view('user.game.index', ['posts' => $posts, 'cond_genre' => $cond_genre]);
-        
+
     }
 
     /**

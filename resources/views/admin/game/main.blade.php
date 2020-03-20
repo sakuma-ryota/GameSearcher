@@ -1,15 +1,15 @@
-@extends('layouts.flont')
+@extends('layouts.admin')
 
 @section('title','アプリ一覧')
 
 @section('content')
-<div class="container">
+    <div class="container">
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-5 text-right">
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">リリース月</button>
-                        <ul class="dropbtn dropdown-menu" aria-labelledby="dropdown">
+                        <ul class="dropMenu dropdown-menu" aria-labelledby="dropdown">
                             <li><a class="dropdown-item" href="#01">01月</a></li>
                             <li><a class="dropdown-item" href="#02">02月</a></li>
                             <li><a class="dropdown-item" href="#03">03月</a></li>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-md-7 text-right">
-                    <form action="{{ action('User\GameController@index') }}" method="get">
+                    <form action="{{ action('Admin\GameController@show') }}" method="get">
                         <div class="form-group row">
                             <div class="col-md-3 align-items-center m-auto">ジャンル</div>
                             <div class="col-md-7">
