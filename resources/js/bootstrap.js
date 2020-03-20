@@ -23,6 +23,14 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+require('jquery-ui/ui/widgets/dialog.js');
+require('jquery-ui/ui/widgets/sortable.js');
+require('jquery-ui/ui/widgets/tooltip.js');
+
+//require('jquery-ui/ui/widgets/datepicker.js');
+require('jquery-ui/ui/i18n/datepicker-ja.js'); 
+
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

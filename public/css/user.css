@@ -4,26 +4,11 @@ body {
   font-family: sans-serif;
 }
 
-.applicationtitle {
-  font-size: 20px;
-}
-
 .jampreleace {
   font-size: 20px;
 }
 
-.table > tbody > tr > td,
-.table > thead > tr > th {
-  vertical-align: middle;
-  text-align: center;
-}
-
-.main {
-  background-color: white;
-  font-size: 30px;
-}
-
-.main-icon {
+.icon {
   display: block;
   height: auto;
   max-height: 100%;
@@ -31,12 +16,9 @@ body {
   margin-top: 15px;
 }
 
-.index-icon {
-  display: block;
-  height: auto;
-  max-height: 100%;
-  max-width: 100px;
-  margin: auto;
+.main {
+  background-color: white;
+  font-size: 30px;
 }
 
 .applink {
@@ -53,9 +35,5 @@ body {
   max-height: 85px;
   max-width: 100%;
   padding: 10px;
-}
-
-.dropMenu {
-  min-width: auto;
 }
 
