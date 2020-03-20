@@ -38,8 +38,9 @@
                     <div class="col-md-5">
                         <select class="form-control" name="genre">
                             <option value="RPG" @if ($game_form->genre=='RPG') selected @endif>RPG</option>
+                            <option value="シミュレーションRPG" @if ($game_form->genre=='シミュレーションRPG') selected @endif>シミュレーションRPG</option>
                             <option value="アクション" @if ($game_form->genre=='アクション') selected @endif>アクション</option>
-                            <option value="シュミレーション" @if ($game_form->genre=='シュミレーション') selected @endif>シミュレーション</option>
+                            <option value="シミュレーション" @if ($game_form->genre=='シミュレーション') selected @endif>シミュレーション</option>
                             <option value="カードゲーム" @if ($game_form->genre=='カードゲーム') selected @endif>カードゲーム</option>
                             <option value="パズル" @if ($game_form->genre=='パズル') selected @endif>パズル</option>
                         </select>
