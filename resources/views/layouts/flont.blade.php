@@ -13,7 +13,7 @@
     <script src="{{ asset('js/app.js')}}" defer></script>
 
     <!-- 自作のJavaScriptの読み込み -->
-    <script type="text/javascript" src="js/user.js" defer></script>
+    <script type="text/javascript" src="js/admin.js" defer></script>
 
     <!-- トップに戻るボタン -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -30,7 +30,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- 自作のCSSの読み込み -->
-    <link href="{{ asset('css/user.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css')}}" rel="stylesheet">
 
 </head>
 
@@ -43,7 +43,6 @@
                 </div>
             </div>
             <div class="row">
-
             </div>
         </div>
         <main class="py-4">

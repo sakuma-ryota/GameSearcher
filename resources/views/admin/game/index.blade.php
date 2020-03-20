@@ -50,7 +50,7 @@
                         <tbody>
                             @foreach($posts as $game)
                                 <tr>
-                                    <th>{{ $game->id }}</th>
+                                    <td>{{ $game->id }}</td>
                                     <td>
                                         @if ($game->image_path)
                                             <img src="{{ asset('storage/image/' . $game->image_path) }}" class="index-icon">

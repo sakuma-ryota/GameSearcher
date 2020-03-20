@@ -6,8 +6,6 @@ body {
 
 .applicationtitle {
   font-size: 20px;
-  margin-right: 15px;
-  margin-left: 20px;
 }
 
 .jampreleace {
@@ -15,8 +13,6 @@ body {
 }
 
 .table > tbody > tr > td,
-.table > tbody > tr > th,
-.table > thead > tr > td,
 .table > thead > tr > th {
   vertical-align: middle;
   text-align: center;
@@ -57,5 +53,9 @@ body {
   max-height: 85px;
   max-width: 100%;
   padding: 10px;
+}
+
+.dropMenu {
+  min-width: auto;
 }
 
