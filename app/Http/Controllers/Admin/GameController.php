@@ -7,8 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Game;
 use App\History;
 use Carbon\Carbon;
+use Storage;
 use Illuminate\Foundation\Http\Middleware\ValidatePostSize;
-use Illuminate\Support\Facades\Storage;
+
 
 class GameController extends Controller
 {
@@ -48,8 +49,8 @@ class GameController extends Controller
         $form = $request->all();
 
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/image/');
-            $game->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $game->image_path = Storage::disk('s3')->url($path);
         } else {
             $game->image_path = null;
         }
@@ -133,8 +134,8 @@ class GameController extends Controller
         $game_form = $request->all();
 
         if ($request->file('image')) {
-            $path = $request->file('image')->store('public/image');
-            $game_form['image_path'] = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $game_form['image_path'] = Storage::disk('s3')->url($path);
         } else {
             $game_form['image_path'] = $game->image_path;
         }
