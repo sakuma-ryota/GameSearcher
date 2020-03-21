@@ -37,7 +37,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="applicationtitle navbar-brand mr-auto ml-3" href="{{ url('/admin') }}">GameSearcher</a>
+            <a class="applicationtitle navbar-brand mr-auto ml-3" href="{{ url('/') }}">GameSearcher</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

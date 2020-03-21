@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-md-7 text-right">
-                    <form action="{{ action('Admin\GameController@show') }}" method="get">
+                    <form action="{{ action('Admin\GameIndexController@index') }}" method="get">
                         <div class="form-group row">
                             <div class="col-md-3 align-items-center m-auto">ジャンル</div>
                             <div class="col-md-7">
