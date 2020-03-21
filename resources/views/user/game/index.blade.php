@@ -33,7 +33,7 @@
                                 <select class="form-control" name="cond_genre" value="{{ old('cond_genre') }}">
                                     <option></option>
                                     <option value="RPG">RPG</option>
-                                    <option value="シュミレーションRPG">シュミレーションRPG</option>
+                                    <option value="シミュレーションRPG">シミュレーションRPG</option>
                                     <option value="アクション">アクション</option>
                                     <option value="シミュレーション">シミュレーション</option>
                                     <option value="カードゲーム">カードゲーム</option>

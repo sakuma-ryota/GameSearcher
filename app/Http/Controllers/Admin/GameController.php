@@ -134,7 +134,7 @@ class GameController extends Controller
         $game_form = $request->all();
 
         if ($request->file('image')) {
-            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $path = Storage::disk('s3')->putFile('/',$game_form['image'],'public');
             $game_form['image_path'] = Storage::disk('s3')->url($path);
         } else {
             $game_form['image_path'] = $game->image_path;

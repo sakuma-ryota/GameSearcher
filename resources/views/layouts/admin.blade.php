@@ -37,7 +37,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="applicationtitle navbar-brand mr-auto ml-3" href="{{ url('/admin') }}">GameSearcher</a>
+            <a class="applicationtitle navbar-brand mr-auto ml-3" href="{{ url('/') }}">GameSearcher</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,11 +48,11 @@
                 </ul>
                 <ul class="navbar-nav">
                     @guest
-                        <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
-                        <li><a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a></li>
+                        <li><a class="nav-link ml-3" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
+                        <li><a class="nav-link ml-3" href="{{ route('register') }}">{{ __('messages.Register') }}</a></li>
                     @else
                         <li class="mr-4 nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth ::user()->name }} <span class="create"></span>
                             </a>
                             <div class="dropMenu dropdown-menu" aria-labelledby="navbarDropdown">

@@ -20,6 +20,7 @@
                                 <select class="form-control" name="cond_genre" value="{{ old('cond_genre') }}">
                                     <option></option>
                                     <option value="RPG">RPG</option>
+                                    <option value="シミュレーションRPG">シミュレーションRPG</option>
                                     <option value="アクション">アクション</option>
                                     <option value="シミュレーション">シミュレーション</option>
                                     <option value="カードゲーム">カードゲーム</option>
@@ -53,7 +54,7 @@
                                     <td>{{ $game->id }}</td>
                                     <td>
                                         @if ($game->image_path)
-                                            <img src="{{ $game->image_path) }}" class="index-icon">
+                                            <img src="{{ $game->image_path }}" class="index-icon">
                                         @endif
                                     </td>
                                     <td>{!! nl2br(e($game->title)) !!}</td>

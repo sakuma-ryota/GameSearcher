@@ -38,6 +38,7 @@
                     <div class="col-md-5">
                         <select class="form-control" name="genre" value="{{ old('genre') }}">
                             <option value="RPG">RPG</option>
+                            <option value="シミュレーションRPG">シミュレーションRPG</option>
                             <option value="アクション">アクション</option>
                             <option value="シミュレーション">シミュレーション</option>
                             <option value="カードゲーム">カードゲーム</option>

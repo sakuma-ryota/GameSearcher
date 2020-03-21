@@ -26,14 +26,14 @@
                     </div>
                 </div>
                 <div class="col-md-7 text-right">
-                    <form action="{{ action('Admin\GameController@show') }}" method="get">
+                    <form action="{{ action('Admin\GameIndexController@index') }}" method="get">
                         <div class="form-group row">
                             <div class="col-md-3 align-items-center m-auto">ジャンル</div>
                             <div class="col-md-7">
                                 <select class="form-control" name="cond_genre" value="{{ old('cond_genre') }}">
                                     <option></option>
                                     <option value="RPG">RPG</option>
-                                    <option value="シュミレーションRPG">シュミレーションRPG</option>
+                                    <option value="シミュレーションRPG">シミュレーションRPG</option>
                                     <option value="アクション">アクション</option>
                                     <option value="シミュレーション">シミュレーション</option>
                                     <option value="カードゲーム">カードゲーム</option>
