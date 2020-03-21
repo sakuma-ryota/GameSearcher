@@ -53,7 +53,7 @@
                                     <td>{{ $game->id }}</td>
                                     <td>
                                         @if ($game->image_path)
-                                            <img src="{{ $game->image_path) }}" class="index-icon">
+                                            <img src="{{ $game->image_path }}" class="index-icon">
                                         @endif
                                     </td>
                                     <td>{!! nl2br(e($game->title)) !!}</td>
