@@ -48,11 +48,11 @@
                 </ul>
                 <ul class="navbar-nav">
                     @guest
-                        <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
-                        <li><a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a></li>
+                        <li><a class="nav-link ml-3" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
+                        <li><a class="nav-link ml-3" href="{{ route('register') }}">{{ __('messages.Register') }}</a></li>
                     @else
                         <li class="mr-4 nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth ::user()->name }} <span class="create"></span>
                             </a>
                             <div class="dropMenu dropdown-menu" aria-labelledby="navbarDropdown">
