@@ -62,10 +62,10 @@
                                 {{ $game->releace }}
                             </div>
                         </div>
-                        <a href="{{ $game->link }}"><div class="title">{!! nl2br(e($game->title)) !!}</div></a>
-                        <div class="genre">{{ $game->genre }}</div>
+                        <a href="{{ $game->link }}"><div class="title mx-auto mt-3">{!! nl2br(e($game->title)) !!}</div></a>
+                        <div class="mt-2">{{ $game->genre }}</div>
                         @if ($game->applink != NULL)
-                            <div>
+                            <div class="mt-2">
                                 <a href="{{ $game->applink }}"><img src="images/appstore.png" class="applink d-block mx-auto"></a>
                             </div>
                         @endif

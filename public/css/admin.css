@@ -18,6 +18,10 @@ body {
   text-align: center;
 }
 
+.title {
+  line-height: 35px;
+}
+
 .main {
   background-color: white;
   font-size: 30px;
@@ -67,7 +71,7 @@ body {
   display: none !important;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 425px) {
   .releace {
     display: none !important;
   }

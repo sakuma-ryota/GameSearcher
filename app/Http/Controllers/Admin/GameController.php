@@ -141,7 +141,7 @@ class GameController extends Controller
         $releace_m = substr($releace_m_d, 0, strlen($releace_m_d) - 3);;
         $game_form_params = [
             'releace' => $game_form['releace'],
-            'releace' => $releace_y,
+            'releace_y' => $releace_y,
             'releace_m_d' => $releace_m_d,
             'releace_m' => $releace_m,
             'title' => $game_form['title'],
