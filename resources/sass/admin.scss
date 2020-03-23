@@ -17,12 +17,16 @@ body {
     text-align: center;
 }
 
+.title {
+    line-height: 35px;
+}
+
 .main {
     background-color: white;
     font-size: 30px;
 }
 
-.main-icon {
+.main_icon {
   	display: block;
   	height: auto;
   	max-height: 100%;
@@ -30,7 +34,7 @@ body {
   	margin-top: 15px;
 }
 
-.index-icon {
+.index_icon {
     display: block;
     height: auto;
     max-height: 100%;
@@ -54,7 +58,22 @@ body {
     padding: 10px;
 }
 
-.dropMenu {
+.drop_menu {
   min-width: auto;
 }
 
+.releace {
+    display: block !important;
+}
+.releace_y_m_d {
+    display: none !important;
+}
+
+@media only screen and (max-width: 425px) {
+    .releace {
+        display: none !important;
+    }
+    .releace_y_m_d {
+        display: block !important;
+    }
+}
