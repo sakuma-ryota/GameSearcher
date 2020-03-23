@@ -51,22 +51,29 @@
             <div class="row">
                 @foreach($posts as $game)
                     <div class="main col-md-5 col-sm-10 mx-auto mb-4 text-center" id="{{ $game->releace_m }}">
-                        <div class="icon-day row">
+                        <div class="icon_day row">
                             <div class="col-6">
-                                <a href="{{ $game->link }}"><img src="{{ $game->image_path }}" class="main-icon"></a>
+                                <a href="{{ $game->link }}"><img src="{{ $game->image_path }}" class="main_icon"></a>
                             </div>
-                            <div class="releace col-6 m-auto text-left">
+                            <div class="releace_y_m_d col-6 m-auto text-center">
+                                {!! nl2br(e($game->releace_y_m_d)) !!}
+                            </div>
+                            <div class="releace col-6 m-auto text-center">
                                 {{ $game->releace }}
                             </div>
                         </div>
                         <a href="{{ $game->link }}"><div class="title">{!! nl2br(e($game->title)) !!}</div></a>
                         <div class="genre">{{ $game->genre }}</div>
-                        <div>
-                            <a href="{{ $game->applink }}"><img src="images/appstore.png" class="applink d-block mx-auto"></a>
-                        </div>
-                        <div>
-                            <a href="{{ $game->googlelink }}"><img src="images/googleplay.png" class="googlelink d-block mx-auto"></a>
-                        </div>
+                        @if ($game->applink != NULL)
+                            <div>
+                                <a href="{{ $game->applink }}"><img src="images/appstore.png" class="applink d-block mx-auto"></a>
+                            </div>
+                        @endif
+                        @if ($game->googlelink != NULL)
+                            <div class="mb-2">
+                                <a href="{{ $game->googlelink }}"><img src="images/googleplay.png" class="googlelink d-block mx-auto"></a>
+                            </div>
+                        @endif
                     </div>
                 @endforeach
             </div>

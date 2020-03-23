@@ -42,7 +42,6 @@ class GameController extends Controller
      */
     public function create(Request $request)
     {
-        // Validationを行う
         $this->validate($request, Game::$rules);
 
         $game = new Game;
@@ -55,11 +54,15 @@ class GameController extends Controller
             $game->image_path = null;
         }
 
+        $releace_y = substr($form['releace'], 0, -5);
         $releace_m_d = substr($form['releace'], 5);
+        $releace_y_m_d = $releace_y."\n" . $releace_m_d;
         $releace_m = substr($releace_m_d, 0, strlen($releace_m_d) - 3);
         $game_params = [
             'releace' => $form['releace'],
+            'releace_y' => $releace_y,
             'releace_m_d' => $releace_m_d,
+            'releace_y_m_d' => $releace_y_m_d,
             'releace_m' => $releace_m,
             'title' => $form['title'],
             'genre' => $form['genre'],
@@ -93,14 +96,7 @@ class GameController extends Controller
      */
     public function show(Request $request)
     {
-        $cond_genre = $request->cond_genre;
-        if ($cond_genre != '') {
-            $posts = Game::where('genre', $cond_genre)->get()->sortBy('releace_m_d');
-        } else {
-            $posts = Game::all()->sortBy('releace_m_d');
-        }
 
-        return view('admin.game.main', ['posts' => $posts, 'cond_genre' => $cond_genre]);
     }
 
     /**
@@ -140,10 +136,12 @@ class GameController extends Controller
             $game_form['image_path'] = $game->image_path;
         }
 
+        $releace_y = substr($game_form['releace'], 0, -5);
         $releace_m_d = substr($game_form['releace'], 5);
         $releace_m = substr($releace_m_d, 0, strlen($releace_m_d) - 3);;
         $game_form_params = [
             'releace' => $game_form['releace'],
+            'releace' => $releace_y,
             'releace_m_d' => $releace_m_d,
             'releace_m' => $releace_m,
             'title' => $game_form['title'],
