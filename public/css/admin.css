@@ -3,41 +3,41 @@ body {
   font-family: sans-serif;
 }
 
-.applicationtitle {
+body .applicationtitle {
   font-size: 20px;
 }
 
-.jampreleace {
+body .jampreleace {
   font-size: 20px;
 }
 
-.table > tbody > tr > td,
-.table > thead > tr > th {
+body .table > tbody > tr > td,
+body .table > thead > tr > th {
   vertical-align: middle;
   text-align: center;
 }
 
-.title {
+body .title {
   line-height: 35px;
 }
 
-.main {
+body .main {
   background-color: white;
   font-size: 30px;
 }
 
 @media only screen and (max-width: 375px) {
-  .title {
+  body .title {
     line-height: 30px;
   }
 
-  .main {
+  body .main {
     background-color: white;
     font-size: 25px;
   }
 }
 
-.index_icon {
+body .index_icon {
   display: block;
   height: auto;
   max-height: 100%;
@@ -45,19 +45,19 @@ body {
   margin: auto;
 }
 
-.applink {
+body .applink {
   max-height: 100px;
   max-width: 100%;
   padding: 10px;
 }
 
-.googlelink {
+body .googlelink {
   max-height: 85px;
   max-width: 100%;
   padding: 10px;
 }
 
-.drop_menu {
+body .drop_menu {
   min-width: auto;
 }
 
