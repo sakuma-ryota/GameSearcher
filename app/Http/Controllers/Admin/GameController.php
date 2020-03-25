@@ -70,8 +70,8 @@ class GameController extends Controller
             'applink' => $form['applink'],
             'googlelink' => $form['googlelink'],
         ];
-
         $game->fill($game_params);
+
         $game->save();
 
         return redirect('admin/game');

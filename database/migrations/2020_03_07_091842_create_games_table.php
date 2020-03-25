@@ -18,6 +18,8 @@ class CreateGamesTable extends Migration
             $table->string('image_path');
             $table->string('title');
             $table->string('releace');
+            $table->string('releace_y_m_d');
+            $table->string(('releace_y'));
             $table->string('releace_m_d');
             $table->string('releace_m');
             $table->string('genre');

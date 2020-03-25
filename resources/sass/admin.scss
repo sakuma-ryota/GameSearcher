@@ -1,59 +1,59 @@
 body {
     background-color: silver;
     font-family: sans-serif;
-}
-
-.applicationtitle {
-    font-size: 20px;
-}
-
-.jampreleace {
-    font-size: 20px;
-}
-
-.table>tbody>tr>td, .table>thead>tr>th {
-    vertical-align: middle;
-    text-align: center;
-}
-
-.title {
-    line-height: 35px;
-}
-.main {
-    background-color: white;
-    font-size: 30px;
-}
-@media only screen and (max-width: 375px) {
+    .applicationtitle {
+        font-size: 20px;
+    }
+    
+    .jampreleace {
+        font-size: 20px;
+    }
+    
+    .table>tbody>tr>td, .table>thead>tr>th {
+        vertical-align: middle;
+        text-align: center;
+    }
+    
     .title {
-        line-height: 30px;
+        line-height: 35px;
     }
     .main {
         background-color: white;
-        font-size: 25px;
+        font-size: 30px;
+    }
+    @media only screen and (max-width: 375px) {
+        .title {
+            line-height: 30px;
+        }
+        .main {
+            background-color: white;
+            font-size: 25px;
+        }
+    }
+    
+    .index_icon {
+        display: block;
+        height: auto;
+        max-height: 100%;
+        max-width: 100px;
+        margin: auto;
+    }
+    
+    .applink {
+        max-height: 100px;
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .googlelink {
+        max-height: 85px;
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .drop_menu {
+      min-width: auto;
     }
 }
 
-.index_icon {
-    display: block;
-    height: auto;
-    max-height: 100%;
-    max-width: 100px;
-    margin: auto;
-}
-
-.applink {
-    max-height: 100px;
-    max-width: 100%;
-    padding: 10px;
-}
-
-.googlelink {
-    max-height: 85px;
-    max-width: 100%;
-    padding: 10px;
-}
-
-.drop_menu {
-  min-width: auto;
-}
 
