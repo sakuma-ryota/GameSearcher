@@ -9,7 +9,7 @@
                 <div class="col-md-5 text-right">
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">リリース月</button>
-                        <ul class="dropMenu dropdown-menu" aria-labelledby="dropdown">
+                        <ul class="dropdown-menu" aria-labelledby="dropdown">
                             <li><a class="dropdown-item" href="#01">01月</a></li>
                             <li><a class="dropdown-item" href="#02">02月</a></li>
                             <li><a class="dropdown-item" href="#03">03月</a></li>
@@ -50,23 +50,30 @@
             </div>
             <div class="row">
                 @foreach($posts as $game)
-                    <div class="main col-md-5 col-sm-10 mx-auto mb-4 text-center" id="{{ $game->releace_m }}">
-                        <div class="icon-day row">
+                    <div class="main col-md-5 col-10 mx-auto mb-4 text-center" id="{{ $game->releace_m }}">
+                        <div class="mt-3 row">
                             <div class="col-6">
-                                <a href="{{ $game->link }}"><img src="{{ $game->image_path }}" class="main-icon"></a>
+                                <a href="{{ $game->link }}"><img src="{{ $game->image_path }}" class="main_icon m-auto img-fluid"></a>
                             </div>
-                            <div class="releace col-6 m-auto text-left">
+                            <div class="releace_y_m_d col-6 d-block d-sm-none m-auto text-center">
+                                {!! nl2br(e($game->releace_y_m_d)) !!}
+                            </div>
+                            <div class="releace col-6 m-auto d-none d-sm-block text-center">
                                 {{ $game->releace }}
                             </div>
                         </div>
-                        <a href="{{ $game->link }}"><div class="title">{!! nl2br(e($game->title)) !!}</div></a>
-                        <div class="genre">{{ $game->genre }}</div>
-                        <div>
-                            <a href="{{ $game->applink }}"><img src="images/appstore.png" class="applink d-block mx-auto"></a>
-                        </div>
-                        <div>
-                            <a href="{{ $game->googlelink }}"><img src="images/googleplay.png" class="googlelink d-block mx-auto"></a>
-                        </div>
+                        <a href="{{ $game->link }}"><div class="title mt-3">{!! nl2br(e($game->title)) !!}</div></a>
+                        <div class="mt-2">{{ $game->genre }}</div>
+                        @if ($game->applink != NULL)
+                            <div class="mt-2">
+                                <a href="{{ $game->applink }}"><img src="images/appstore.png" class="applink m-auto mx-auto"></a>
+                            </div>
+                        @endif
+                        @if ($game->googlelink != NULL)
+                            <div class="mb-2">
+                                <a href="{{ $game->googlelink }}"><img src="images/googleplay.png" class="googlelink m-auto mx-auto"></a>
+                            </div>
+                        @endif
                     </div>
                 @endforeach
             </div>

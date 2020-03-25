@@ -55,7 +55,7 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth ::user()->name }} <span class="create"></span>
                             </a>
-                            <div class="dropMenu dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="drop_menu dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
@@ -73,7 +73,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 m-auto">
-                    <h1 class="text-center mt-4">GameSearcher</h1>
+                    <h1 class="d-none d-sm-block text-center mt-4">GameSearcher</h1>
                 </div>
             </div>
         </div>

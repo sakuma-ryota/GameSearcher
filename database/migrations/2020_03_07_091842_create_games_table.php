@@ -22,8 +22,8 @@ class CreateGamesTable extends Migration
             $table->string('releace_m');
             $table->string('genre');
             $table->string('link');
-            $table->string('applink');
-            $table->string('googlelink');
+            $table->string('applink')->nullable();
+            $table->string('googlelink')->nullable();
             $table->timestamps();
         });
     }
