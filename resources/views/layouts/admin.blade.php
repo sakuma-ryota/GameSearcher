@@ -73,7 +73,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 m-auto">
-                    <h1 class="text-center mt-4">GameSearcher</h1>
+                    <h1 class="d-none d-sm-block text-center mt-4">GameSearcher</h1>
                 </div>
             </div>
         </div>
