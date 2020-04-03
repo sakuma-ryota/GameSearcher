@@ -18,6 +18,11 @@ class Game extends Model
         'googlelink' => 'required_without:applink'
     );
 
+    public function games()
+    {
+        return $this->belongsTo('App\User');
+    }
+
     public function histories()
     {
         return $this->hasMany('App\History');

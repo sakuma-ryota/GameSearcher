@@ -147,7 +147,7 @@ return [
 
     'attributes' => [
         'image' => 'アイコン',
-        'relrece' => 'リリース日',
+        'releace' => 'リリース日',
         'title' => 'タイトル',
         'genre' => 'ジャンル',
         'link' => '公式HP',
