@@ -53,7 +53,7 @@
                     @else
                         <li class="mr-4 nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth ::user()->name }} <span class="create"></span>
+                                {{ Auth::user()->name }} <span class="create"></span>
                             </a>
                             <div class="drop_menu dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"

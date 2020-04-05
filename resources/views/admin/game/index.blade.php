@@ -50,25 +50,27 @@
                         </thead>
                         <tbody>
                             @foreach($posts as $game)
-                                <tr>
-                                    <td>{{ $game->id }}</td>
-                                    <td>
-                                        @if ($game->image_path)
-                                            <img src="{{ $game->image_path }}" class="index_icon">
-                                        @endif
-                                    </td>
-                                    <td>{!! nl2br(e($game->title)) !!}</td>
-                                    <td>{{ $game->releace }}</td>
-                                    <td>{{ $game->genre }}</td>
-                                    <td>
-                                        <div>
-                                            <a href="{{ action('Admin\GameController@edit', ['id' => $game->id]) }}">編集</a>
-                                        </div>
-                                        <div>
-                                            <a href="{{ action('Admin\GameController@delete', ['id' => $game->id]) }}">削除</a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @if ($game->company_id == Auth::user()->id)
+                                    <tr>
+                                        <td>{{ $game->id }}</td>
+                                        <td>
+                                            @if ($game->image_path)
+                                                <img src="{{ $game->image_path }}" class="index_icon">
+                                            @endif
+                                        </td>
+                                        <td>{!! nl2br(e($game->title)) !!}</td>
+                                        <td>{{ $game->releace }}</td>
+                                        <td>{{ $game->genre }}</td>
+                                        <td>
+                                            <div>
+                                                <a href="{{ action('Admin\GameController@edit', ['id' => $game->id]) }}">編集</a>
+                                            </div>
+                                            <div>
+                                                <a href="{{ action('Admin\GameController@delete', ['id' => $game->id]) }}">削除</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>
