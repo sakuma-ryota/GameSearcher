@@ -9,7 +9,7 @@
                 <div class="col-md-5 text-right">
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">リリース月</button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown">
+                        <ul class="drop_menu dropdown-menu" aria-labelledby="dropdown">
                             <li><a class="dropdown-item" href="#01">01月</a></li>
                             <li><a class="dropdown-item" href="#02">02月</a></li>
                             <li><a class="dropdown-item" href="#03">03月</a></li>
